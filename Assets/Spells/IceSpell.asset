@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a10d98974d0191428fb55dbc1faa501, type: 3}
   m_Name: IceSpell
   m_EditorClassIdentifier: Assembly-CSharp::SpellData
-  element: 0
+  element: 1
   damage: 1
   projectileSpeed: 10
   statusDuration: 3
-  projectileColor: {r: 1, g: 1, b: 1, a: 1}
+  projectileColor: {r: 0.2127803, g: 0.66260093, b: 0.8113208, a: 1}

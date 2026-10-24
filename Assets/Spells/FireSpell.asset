@@ -16,4 +16,4 @@ MonoBehaviour:
   damage: 1
   projectileSpeed: 10
   statusDuration: 3
-  projectileColor: {r: 1, g: 1, b: 1, a: 1}
+  projectileColor: {r: 0.7056604, g: 0.17974362, b: 0.17974362, a: 1}
