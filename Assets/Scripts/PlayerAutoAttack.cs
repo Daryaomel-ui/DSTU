@@ -30,10 +30,13 @@ public class PlayerAutoAttack : MonoBehaviour
             currentSpell = iceSpell;
         }
 
-        if (Time.time < nextShotTime)
+
+        if (!Input.GetKeyDown(KeyCode.Space) ||
+            Time.time < nextShotTime)
         {
             return;
         }
+
 
         if (projectilePrefab == null || currentSpell == null)
         {

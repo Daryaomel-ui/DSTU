@@ -1535,7 +1535,7 @@ MonoBehaviour:
   iceSpell: {fileID: 11400000, guid: 08e106a49cf234940a838e1c91ef2a5e, type: 2}
   projectilePrefab: {fileID: 8833931729229994871, guid: a9efb33117fc6fc4284f0a07b5ecb9fe, type: 3}
   attackRange: 10
-  shotInterval: 1
+  shotInterval: 0.3
 --- !u!114 &1018391864
 MonoBehaviour:
   m_ObjectHideFlags: 0
