@@ -20,18 +20,17 @@ public class PlayerAutoAttack : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetButtonDown("SelectFire"))
         {
             currentSpell = fireSpell;
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetButtonDown("SelectIce"))
         {
             currentSpell = iceSpell;
         }
 
-
-        if (!Input.GetKeyDown(KeyCode.Space) ||
+        if (!Input.GetButtonDown("Attack") ||
             Time.time < nextShotTime)
         {
             return;

@@ -27,10 +27,10 @@ public class GameUI : MonoBehaviour
             timeLeft - Time.deltaTime
         );
 
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetButtonDown("SelectFire"))
             fireSelected = true;
 
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetButtonDown("SelectIce"))
             fireSelected = false;
 
         UpdateUI();
