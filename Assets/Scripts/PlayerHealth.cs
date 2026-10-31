@@ -6,6 +6,7 @@ public class PlayerHealth : MonoBehaviour
     public int maxHealth = 5;
     public float invulnerabilityTime = 1f;
     public GameUI gameUI;
+    public GameMenuUI gameMenuUI;
 
     private int currentHealth;
     private float nextDamageTime;
@@ -46,6 +47,9 @@ public class PlayerHealth : MonoBehaviour
         if (currentHealth == 0)
         {
             Debug.Log("Игрок проиграл!");
+
+            if (gameMenuUI != null)
+                gameMenuUI.ShowDeath();
         }
     }
 }

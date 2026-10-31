@@ -9,6 +9,7 @@ public class GameUI : MonoBehaviour
     public TMP_Text killsText;
     public TMP_Text fireText;
     public TMP_Text iceText;
+    public GameMenuUI gameMenuUI;
 
     private float timeLeft = 120f;
     private int health = 5;
@@ -20,8 +21,14 @@ public class GameUI : MonoBehaviour
         UpdateUI();
     }
 
+
     void Update()
     {
+        if (gameMenuUI != null && !gameMenuUI.IsPlaying)
+        {
+            return;
+        }
+
         timeLeft = Mathf.Max(
             0f,
             timeLeft - Time.deltaTime
@@ -34,7 +41,13 @@ public class GameUI : MonoBehaviour
             fireSelected = false;
 
         UpdateUI();
+
+        if (timeLeft <= 0f && gameMenuUI != null)
+        {
+            gameMenuUI.ShowDeath();
+        }
     }
+
 
     void UpdateUI()
     {
@@ -59,10 +72,17 @@ public class GameUI : MonoBehaviour
         UpdateUI();
     }
 
+
     public void AddKill()
     {
         kills++;
         UpdateUI();
+
+        if (kills >= 10 && gameMenuUI != null)
+        {
+            gameMenuUI.ShowWin();
+        }
     }
+
 }
 
