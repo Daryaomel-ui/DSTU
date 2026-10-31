@@ -50,4 +50,32 @@ public class GolemHealth : MonoBehaviour
 
         Destroy(gameObject);
     }
+
+    void OnGUI()
+    {
+        if (currentHealth <= 0 || Camera.main == null)
+            return;
+
+        Vector3 screenPosition = Camera.main.WorldToScreenPoint(
+            transform.position + Vector3.up * 1.5f
+        );
+
+        if (screenPosition.z <= 0)
+            return;
+
+        GUIStyle style = new GUIStyle(GUI.skin.box);
+
+        style.fontSize = 24;
+        style.fontStyle = FontStyle.Bold;
+        style.alignment = TextAnchor.MiddleCenter;
+
+        float x = screenPosition.x - 70;
+        float y = Screen.height - screenPosition.y - 22;
+
+        GUI.Box(
+            new Rect(x, y, 140, 45),
+            $"HP: {currentHealth}/{maxHealth}",
+            style
+        );
+    }
 }
