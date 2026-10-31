@@ -57,6 +57,20 @@ public class PlayerAutoAttack : MonoBehaviour
 
         projectile.Initialize(nearestGolem, currentSpell);
 
+
+        if (AudioManager.Instance != null)
+        {
+            if (currentSpell.element == SpellElement.Fire)
+            {
+                AudioManager.Instance.PlayFire();
+            }
+            else if (currentSpell.element == SpellElement.Ice)
+            {
+                AudioManager.Instance.PlayIce();
+            }
+        }
+
+
         nextShotTime = Time.time + shotInterval;
     }
 

@@ -34,6 +34,10 @@ public class PlayerHealth : MonoBehaviour
             currentHealth - damage
         );
 
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayPlayerHit();
+        }
         nextDamageTime =
             Time.time + invulnerabilityTime;
 

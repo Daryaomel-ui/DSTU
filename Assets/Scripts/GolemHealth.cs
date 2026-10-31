@@ -42,6 +42,12 @@ public class GolemHealth : MonoBehaviour
         }
 
         Debug.Log("Голем уничтожен!");
+
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayGolemDeath();
+        }
+
         Destroy(gameObject);
     }
 }

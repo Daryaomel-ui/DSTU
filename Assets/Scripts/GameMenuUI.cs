@@ -82,6 +82,11 @@ public class GameMenuUI : MonoBehaviour
         state = GameState.Dead;
         UpdatePanels();
         Time.timeScale = 0f;
+
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayDefeat();
+        }
     }
 
     public void ShowWin()
@@ -91,6 +96,11 @@ public class GameMenuUI : MonoBehaviour
         state = GameState.Won;
         UpdatePanels();
         Time.timeScale = 0f;
+
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayVictory();
+        }
     }
 
     public void RestartGame()

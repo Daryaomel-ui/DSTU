@@ -92,6 +92,11 @@ public class GolemStatus : MonoBehaviour
 
     void Explode()
     {
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayExplosion();
+        }
+
         Vector3 explosionPosition =
             transform.position + Vector3.up * 0.5f;
 
